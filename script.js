@@ -19,7 +19,7 @@ let dbStorage = {
     }
 }
 
-show(); //INICIA OS DADOS EM TELA
+
 
 // RESPONSAVEL POR VERIFICAR SE EXISTE ALGUM VALOR NO INPUT, SENDO TRUE ATIVA O BTN ADD CASO CONTRARIO INABILITA
 inputField.onkeyup = () => {
@@ -74,7 +74,9 @@ function show() {
         listArray = JSON.parse(dbStorage.getStorage());
     }
 
-    quantidade.textContent = listArray.length; //ARMAZENA A QUANTIDADE DE DADOS DO ARRAY E JOGA NO HTML NA CLASS QUANTIDADE
+    console.log(listArray)
+    quantidade.textContent = listArray.length;
+    //ARMAZENA A QUANTIDADE DE DADOS DO ARRAY E JOGA NO HTML NA CLASS QUANTIDADE
 
     // VERIFICA SE O TAMANHO DO ARRAY É MAIOR QUE 0 E ATIVA/REMOVE O BTN REMOVE ALL
     if (listArray.length > 0) {
@@ -91,7 +93,7 @@ function show() {
     todoList.innerHTML = newTag;
     inputField.value = '';
 }
-
+show(); //INICIA OS DADOS EM TELA
 function deleteItem(index) {
     listArray = JSON.parse(dbStorage.getStorage());
     listArray.splice(index, 1);
